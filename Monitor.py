@@ -1,4 +1,6 @@
 import psutil
+import schedule
+import time
 
 print(psutil.pids()  )
 pids = psutil.pids()
@@ -18,4 +20,10 @@ def display():
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
             pass
 display()
+
+schedule.every(15).seconds.do(display)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
 
