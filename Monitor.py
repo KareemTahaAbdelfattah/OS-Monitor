@@ -28,4 +28,3 @@ print("|" +  ("-"*10 + "|" )*30 )
 while True:
     schedule.run_pending()
     time.sleep(1)
-
